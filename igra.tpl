@@ -14,14 +14,14 @@
         Nepravilne črke: {{igra.nepravilni_ugibi()}}
     </div>
     % if stanje == ZMAGA or stanje == PORAZ:
-        % if stanje == ZMAGA:
+        if stanje == ZMAGA:
             <b>Čestitke, zmagal si!</b>
-        % else:
+        else:
             <b>Več sreče prihodnjič! Pravilno geslo je bilo {{igra.geslo}}
             <form action="/igra/" method="post">
                 <button type="submit">Nova igra</button>
             </form>
-    % else:
+        else:
         <form method="post" action="/igra/{{id_igre}}/">
             <input name="crka" /> <input type="submit" value="Ugibaj!">
         </form>
