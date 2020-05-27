@@ -1,14 +1,13 @@
 import model
 
-
 def izpis_poraza(igra):
-    return f"Žal si izgubil igro, geslo je bilo: '{igra.geslo}'"
+    return f"Žal si izgubil/a igro, geslo je bilo '{igra.geslo}'"
 
 def izpis_zmage(igra):
-    return f"Čestitke, uganil si geslo: '{igra.geslo}' v {len(igra.crke)} ugibih."
+    return f"Čestitke, uganil/a si geslo '{igra.geslo}' v {len(igra.crke)} ugibih."
 
 def izpis_igre(igra):
-    besedilo = f""" GESLO: {igra.pravilni_del_gesla()}
+    besedilo = f"""GESLO: {igra.pravilni_del_gesla()}
 Nepravilne črke: {igra.nepravilni_ugibi()}
 Zmotiš se lahko le še {model.STEVILO_DOVOLJENIH_NAPAK - igra.stevilo_napak()}-krat."""
     return besedilo
